@@ -1,14 +1,25 @@
 import express from 'express'
 
+
 const app = express()
 
 const port = 3131
 
 app.use(express.json())
+
 // const obj = JSON.parse(text);
 
-const welcomePlayer = "Hello player, please enter your name...";
-const classSel = "You are about to embark on and exciting adventure, please selet a class. You have the choice of: Samurai, Ninja or Hero... what will you choose?"
+// const welcomePlayer = "Hello player, please enter your name...";
+const classSel = "welcome player, you are about to embark on and exciting adventure, please selet a class. You have the choice of: Samurai, Ninja or Hero... what will you choose?"
+const classArray = [ 
+        {class: "Samurai",
+        description: "The Samurai wields the legendary Moonviel katana and thier past has a dark secret"},
+        {class: "Ninja",
+        description: "The Ninja wields the Rivers of blood sword and thier hopes are to bring piece in Js-topia."},
+        {class: "Hero",
+        description: "Finally, the Hero, they wield the Dark Moon great sword, and they hope to bring prosperity to the lands between."},
+
+    ];
 //users is a test
 //const users 
 
@@ -16,31 +27,27 @@ const classSel = "You are about to embark on and exciting adventure, please sele
 //     res.send(window.prompt("Please enter your Name"));
 // })
 
-app.get('/welcome', (req, res) => {
-    res.send(welcomePlayer);
-    //const playerName = req.params.name
-    // const playerName = window.prompt("please enter your name");
-    req.send()
-    //console.log(welcomePlayer)
-})
+// app.get('/welcome', (req, res) => {
+//     res.send(welcomePlayer);
+//     //req.send()
+// })
 
-app.get('/classSelect', (req, res) => {
+app.get('/welcome', (req, res) => {
     res.send(classSel);
     console.log(req.query);
 })
-app.get('/welcome/:name', (req, res) => {
+app.get('/Description', (req, res) => {
     
-    const playerName = window.prompt("what is your name?");
-res.send(`Welcome to the world of Js-topia ${playerName}`);
-    //req.send()
+    res.send(classArray);
+    
 })
 
-app.post('/playerName', (req, res) => {
-    const newUser = req.body;
-    console.log(newUser);
-    users.push(newUser);
-    res.send("succefully added " +  newUser.name);
-});
+// app.post('/playerName', (req, res) => {
+//     const newUser = req.body;
+//     console.log(newUser);
+//     users.push(newUser);
+//     res.send("succefully added " +  newUser.name);
+// });
 
 app.get('/', (request, response) =>{
     response.send('server is up\n');
