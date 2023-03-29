@@ -3,7 +3,7 @@
 
 const samPath = "Hello Samuria, you have entered the great colosseum of Js-topia. You are nearing the end of the rule-all tournament and you have 2 fights left good luck...";
 //console.log(samPath)
-export let opponentFirstAttack = "Your opponent comes at you with intensity and with intent to kill you, you : (1) dodge left (2) dodge right or (3) or hit back with a counter."
+export let opponentFirstAttack = "As you enter the arena, your opponent gives you no time to prepare slashing at you, you : (1) dodge left (2) dodge right or (3) or hit back with a counter."
 
 let choice = 3
 if (choice == 1){
@@ -22,7 +22,7 @@ let secondChoice = 1
      if(secondChoice == 1){
         console.log("ohhh noo! you got hit for getting cocky!") 
 }else if (secondChoice == 2){
-        console.log("Relax your muscles, breathe slowly and land 10 consecutive hits!")
+        console.log("Relax your muscles, breath slowly and land 10 consecutive hits!")
 }
         
 //if previous choice was 2
